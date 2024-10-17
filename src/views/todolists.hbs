@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO Lists</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <fieldset>
+        <legend>Ajouter une TODO liste</legend>
+        <form method="post">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name">
+            <input type="submit" value="Ajouter">
+        </form>
+    </fieldset>
+
+    <h1>Toutes vos listes</h1>
+    {{#each todolists}}
+        <div class="todo">
+            <h3>{{this.name}}</h3>
+            <p>{{this.elements.length}} élément(s)</p>
+            <a href="/todolists/{{this.id}}">Modifier</a>
+        </div>
+    {{/each}}
+</body>
+</html>

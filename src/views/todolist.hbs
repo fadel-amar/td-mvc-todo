@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO Lists</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <fieldset>
+        <legend>Modifier une TODO liste</legend>
+        <form method="post" action="/todolists/{{todolist.id}}">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" value="{{todolist.name}}">
+            {{#each todolist.elements}}
+            <input type="text" id="elements[]" name="elements[]" value="{{this.label}}">
+            {{/each}}
+            <input type="text" id="elements[]" name="elements[]">
+            <input type="submit" value="Enregistrer les modifications">
+        </form>
+    </fieldset>
+     <a href="/todolists">Retour</a>
+</body>
+</html>
