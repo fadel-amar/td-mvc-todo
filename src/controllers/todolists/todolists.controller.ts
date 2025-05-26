@@ -2,7 +2,6 @@ import { Body, Controller, Get, Param, Post, Render } from '@nestjs/common';
 import { TodolistsService } from 'src/models/todolists/todolists.service';
 import { CreateTodolist } from '../dto/create-todolist.dto';
 
-
 @Controller('todolists')
 export class TodolistsController {
     constructor(private readonly todolistsService: TodolistsService) { }
